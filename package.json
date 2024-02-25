@@ -1,0 +1,24 @@
+{
+  "name": "pharmasoul",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tailwind": "npx tailwindcss -i ./src/css/input.css -o ./src/css/output.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AshishDeveloperr/pharmasoul.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AshishDeveloperr/pharmasoul/issues"
+  },
+  "homepage": "https://github.com/AshishDeveloperr/pharmasoul#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
+  }
+}
