@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider with Tiny Slider and Tailwind CSS</title>
+    <!-- Link to Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Link to Tiny Slider CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/tiny-slider.css">
+</head>
+<body>
+
+<section class="mx-auto">
+    <div class="my-slider-container">
+        <div class="my-slider">
+            <div>
+                <img src="https://placehold.co/1200x500" alt="" class="w-full h-full object-cover object-center">
+            </div>
+            <div>
+                <img src="https://placehold.co/1200x400" alt="" class="w-full h-full object-cover object-center">
+            </div>
+            <div>
+                <img src="https://placehold.co/1200x400" alt="" class="w-full h-full object-cover object-center">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Link to Tiny Slider JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/min/tiny-slider.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var slider = tns({
+            container: '.my-slider',
+            items: 1,
+            slideBy: 'page',
+            autoplay: true,
+            autoplayTimeout: 3000,
+            controls: false,
+            nav: false,
+            autoplayButtonOutput: false,
+            mouseDrag: true,
+            loop: true,
+        });
+    });
+</script>
+</body>
+</html>

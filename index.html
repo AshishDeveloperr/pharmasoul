@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- Link to Tiny Slider CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/tiny-slider.css">
     <title>PharmaSoul</title>
 </head>
 <style>
@@ -18,17 +20,17 @@
         } 
 </style>
 <body>
-    <header>
+    <header class="hidden md:block">
         <div class="container mx-auto px-20 py-4">
             <div class="grid grid-cols-2">
                 <div class="col-span-1 flex items-center">
-                    <!-- <img src="https://placehold.co/400" alt="" class="w-20"> -->
-                    <h2 class="text-5xl font-semibold text-black">LOGO</h2>
+                    <img src="src/img/ultramr.webp" alt="" class="w-20">
+                    <!-- <h2 class="text-5xl font-semibold text-black">LOGO</h2> -->
                 </div>
-                <div class="col-span-1">                    
-                    <form class="max-w-md mx-auto">   
+                <div class="col-span-1 flex items-center w-full">                    
+                    <form class="max-w-xl mx-auto">   
                         <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only">Search</label>
-                        <div class="relative">
+                        <div class="relative w-96">
                             <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
                                 <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
@@ -41,7 +43,22 @@
             </div>
         </div>
     </header>
-    <section class="bg-sky-800">
+    <section class="mx-auto">
+        <div class="my-slider-container">
+            <div class="my-slider">
+                <div>
+                    <img src="https://placehold.co/1200x500" alt="" class="w-full h-full object-cover object-center">
+                </div>
+                <div>
+                    <img src="https://placehold.co/1200x500" alt="" class="w-full h-full object-cover object-center">
+                </div>
+                <div>
+                    <img src="https://placehold.co/1200x500" alt="" class="w-full h-full object-cover object-center">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- <section class="bg-sky-800">
         <div class="container mx-auto py-10 px-20">
             <div class="grid grid-cols-2">
                 <div class="col-span-1 pt-16 pr-5">
@@ -55,37 +72,37 @@
                 </div>
             </div>
         </div>
-    </section>
-    <section class="container mx-auto py-16 px-20">
+    </section> -->
+    <section class="container mx-auto py-16 px-5 md:px-20">
         <div class="grid grid-cols-5">
-            <div class="col-span-2">
+            <div class="col-span-5 md:col-span-2">
                 <div class="shadow-lg">
                     <img src="https://introspectivemarketresearch.com/site/assets/files/1/introspective_market_research_about_is_1000_x_1000px-1.jpg" alt="">
                 </div>
             </div>
-            <div class="col-span-5 md:col-span-3 order-1 md:order-2 flex items-center pl-8">
+            <div class="col-span-5 md:col-span-3 order-1 md:order-2 flex items-center md:pl-8">
                 <div class="pr-5">
                     <div class="text-slate-900">
-                        <h6 class="text-base font-semibold text-indigo-700 pb-3">About Us</h6>
-                        <h2 class="text-2xl font-semibold text-sky-900 pb-3">Let’s Take Your Business to the Next Level Together</h2>
+                        <h6 class="text-base font-semibold text-primary-orange pb-3">About Us</h6>
+                        <h2 class="text-2xl font-semibold text-primary-gray pb-3">Let’s Take Your Business to the Next Level Together</h2>
                         <p class="text-base font-normal text-gray-900">We are technocratic market research and consulting company that provides comprehensive and data-driven market insights. We hold the expertise in demand analysis and estimation of multidomain industries with encyclopedic competitive and landscape analysis. Our team at Introspective Market Research focuses on result-oriented research methodologies which are based on historic and present data to produce authentic foretelling about the industry. Introspective Market Research's extensive studies help our clients to make righteous decisions that make a positive impact on their business. Our in-depth knowledge of various industries, modern methodologies, and rich access to an authentic global database delivers syndicated and custom research requirements.</p>
                         <div class="grid grid-cols-2 py-4">
                             <div class="col-span-1">
                                 <ul>
                                     <li class="text-sm text-gray-900 font-normal flex py-1">
-                                        <svg class="w-5 h-5 text-indigo-900" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                        <svg class="w-5 h-5 text-primary-orange" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
                                         </svg>
                                         Reliable Market Research
                                     </li>
                                     <li class="text-sm text-gray-900 font-normal flex py-1">
-                                        <svg class="w-5 h-5 text-indigo-900" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                        <svg class="w-5 h-5 text-primary-orange" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
                                         </svg>
                                         Detailed Research Methodology
                                     </li>
                                     <li class="text-sm text-gray-900 font-normal flex py-1">
-                                        <svg class="w-5 h-5 text-indigo-900" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                        <svg class="w-5 h-5 text-primary-orange" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
                                         </svg>
                                         Strong Diligence
@@ -95,19 +112,19 @@
                             <div class="col-span-1">
                                 <ul>
                                     <li class="text-sm text-gray-900 font-normal flex py-1">
-                                        <svg class="w-5 h-5 text-indigo-900" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                        <svg class="w-5 h-5 text-primary-orange" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
                                         </svg>
                                         Comprehensive Market View
                                     </li>
                                     <li class="text-sm text-gray-900 font-normal flex py-1">
-                                        <svg class="w-5 h-5 text-indigo-900" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                        <svg class="w-5 h-5 text-primary-orange" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
                                         </svg>
                                         Customer-Centric Service
                                     </li>
                                     <li class="text-sm text-gray-900 font-normal flex py-1">
-                                        <svg class="w-5 h-5 text-indigo-900" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                        <svg class="w-5 h-5 text-primary-orange" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
                                         </svg>
                                         24/7 Support
@@ -122,12 +139,12 @@
         </div>
     </section>
     <section class="bg-gray-200">
-        <div class="container mx-auto px-20 py-16">
+        <div class="container mx-auto px-5 md;px-20 py-16">
             <div class="text-center pb-3">
-                <h6 class="text-base font-semibold text-blue-700 py-1">POPULAR REPORT</h6>
-                <h6 class="text-3xl font-bold text-sky-900">Popular Reports</h6>
+                <h6 class="text-base font-semibold text-primary-orange py-1">POPULAR REPORT</h6>
+                <h6 class="text-3xl font-bold text-primary-gray">Popular Reports</h6>
             </div>
-            <div class="flex justify-center pt-6 pb-2 space-x-1">
+            <div class="flex justify-center pt-6 pb-2 space-x-1 overflow-x-scroll">
                 <button type="button" class="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-md border border-gray-200 hover:bg-gray-100 hover:text-sky-700 focus:z-10 focus:ring-4 focus:ring-gray-100 hover:underline">Manufacturing and Construction</button>
                 <button type="button" class="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-md border border-gray-200 hover:bg-gray-100 hover:text-sky-700 focus:z-10 focus:ring-4 focus:ring-gray-100 hover:underline">Automotive and Transport</button>
                 <button type="button" class="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-md border border-gray-200 hover:bg-gray-100 hover:text-sky-700 focus:z-10 focus:ring-4 focus:ring-gray-100 hover:underline">Electronics and Semiconductors</button>
@@ -135,7 +152,7 @@
                 <button type="button" class="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-md border border-gray-200 hover:bg-gray-100 hover:text-sky-700 focus:z-10 focus:ring-4 focus:ring-gray-100 hover:underline">Consumer Goods</button>
             </div>
             <div class="grid grid-cols-3 gap-8 py-6">
-                <div class="col-span-1 shadow-xl">
+                <div class="col-span-3 md:col-span-1 shadow-xl">
                     <div class="bg-[#031B4E] px-5 py-6">
                         <h3 class="text-base font-semibold text-white pb-4">Global Condominiums and Apartments Market-Latest Report Highlights Market Growth</h3>
                         <span class="text-xs text-sky-950 font-medium bg-white px-3 py-1 rounded-full">Manufacturing And Construction</span>
@@ -145,10 +162,10 @@
                             <h3 class="text-base font-semibold text-sky-950">Published on <span class="font-normal">February 2024</span></h3>
                             <h3 class="text-base font-normal text-sky-950"><span class="text-lg font-semibold">$</span> 3250</h3>
                         </div>
-                        <a href="#" class="text-base font-normal text-sky-950 underline hover:text-teal-800">Read More</a>
+                        <a href="#" class="text-base font-normal text-sky-950 underline hover:text-primary-orange">Read More</a>
                     </div>
                 </div>
-                <div class="col-span-1 shadow-xl">
+                <div class="col-span-3 md:col-span-1 shadow-xl">
                     <div class="bg-[#031B4E] px-5 py-6">
                         <h3 class="text-base font-semibold text-white pb-4">Composite Doors and Windows Market - In-Deep Analysis Focusing on Market Share</h3>
                         <span class="text-xs text-sky-950 font-medium bg-white px-3 py-1 rounded-full">Manufacturing And Construction</span>
@@ -158,10 +175,10 @@
                             <h3 class="text-base font-semibold text-sky-950">Published on <span class="font-normal">February 2024</span></h3>
                             <h3 class="text-base font-medium text-sky-950">$ 3250</h3>
                         </div>
-                        <a href="#" class="text-base font-normal text-sky-950 underline hover:text-teal-800">Read More</a>
+                        <a href="#" class="text-base font-normal text-sky-950 underline hover:text-primary-orange">Read More</a>
                     </div>
                 </div>
-                <div class="col-span-1 shadow-xl">
+                <div class="col-span-3 md:col-span-1 shadow-xl">
                     <div class="bg-[#031B4E] px-5 py-6">
                         <h3 class="text-base font-semibold text-white pb-4">Cold Storage Construction Market - Comprehensive Study Report & Recent Trends</h3>
                         <span class="text-xs text-sky-950 font-medium bg-white px-3 py-1 rounded-full">Manufacturing And Construction</span>
@@ -171,10 +188,10 @@
                             <h3 class="text-base font-semibold text-sky-950">Published on <span class="font-normal">February 2024</span></h3>
                             <h3 class="text-base font-medium text-sky-950">$ 3250</h3>
                         </div>
-                        <a href="#" class="text-base font-normal text-sky-950 underline hover:text-teal-800">Read More</a>
+                        <a href="#" class="text-base font-normal text-sky-950 underline hover:text-primary-orange">Read More</a>
                     </div>
                 </div>
-                <div class="col-span-1 shadow-xl">
+                <div class="col-span-3 md:col-span-1 shadow-xl">
                     <div class="bg-[#031B4E] px-5 py-6">
                         <h3 class="text-base font-semibold text-white pb-4">Global Building Panels Market- Latest Advancement And Analysis</h3>
                         <span class="text-xs text-sky-950 font-medium bg-white px-3 py-1 rounded-full">Manufacturing And Construction</span>
@@ -184,10 +201,10 @@
                             <h3 class="text-base font-semibold text-sky-950">Published on <span class="font-normal">February 2024</span></h3>
                             <h3 class="text-base font-medium text-sky-950">$ 3250</h3>
                         </div>
-                        <a href="#" class="text-base font-normal text-sky-950 underline hover:text-teal-800">Read More</a>
+                        <a href="#" class="text-base font-normal text-sky-950 underline hover:text-primary-orange">Read More</a>
                     </div>
                 </div>
-                <div class="col-span-1 shadow-xl">
+                <div class="col-span-3 md:col-span-1 shadow-xl">
                     <div class="bg-[#031B4E] px-5 py-6">
                         <h3 class="text-base font-semibold text-white pb-4">Last Mile Delivery Market Comprehensive Study Report with Recent Trends</h3>
                         <span class="text-xs text-sky-950 font-medium bg-white px-3 py-1 rounded-full">Manufacturing And Construction</span>
@@ -197,10 +214,10 @@
                             <h3 class="text-base font-semibold text-sky-950">Published on <span class="font-normal">February 2024</span></h3>
                             <h3 class="text-base font-medium text-sky-950">$ 3250</h3>
                         </div>
-                        <a href="#" class="text-base font-normal text-sky-950 underline hover:text-teal-800">Read More</a>
+                        <a href="#" class="text-base font-normal text-sky-950 underline hover:text-primary-orange">Read More</a>
                     </div>
                 </div>
-                <div class="col-span-1 shadow-xl">
+                <div class="col-span-3 md:col-span-1 shadow-xl">
                     <div class="bg-[#031B4E] px-5 py-6">
                         <h3 class="text-base font-semibold text-white pb-4">Green Logistics Market Global Size & Upcoming Industry Trends</h3>
                         <span class="text-xs text-sky-950 font-medium bg-white px-3 py-1 rounded-full">Manufacturing And Construction</span>
@@ -210,145 +227,145 @@
                             <h3 class="text-base font-semibold text-sky-950">Published on <span class="font-normal">February 2024</span></h3>
                             <h3 class="text-base font-medium text-sky-950">$ 3250</h3>
                         </div>
-                        <a href="#" class="text-base font-normal text-sky-950 underline hover:text-teal-800">Read More</a>
+                        <a href="#" class="text-base font-normal text-sky-950 underline hover:text-primary-orange">Read More</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
     <section class="bg-white">
-        <div aria-label="Recent Posts" class="container mx-auto px-20 py-20">
+        <div aria-label="Recent Posts" class="container mx-auto px-5 md:px-20 py-20">
             <div class="mb-10 md:mb-16">
                 <h2 class="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">Most Recent Posts</h2>
                 <p class="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sint necessitatibus molestias explicabo.</p>
             </div>
             <div class="grid gap-8 sm:grid-cols-2 sm:gap-12 lg:grid-cols-2 xl:grid-cols-2 xl:gap-16">
-            <article class="flex flex-col items-center gap-4 md:flex-row lg:gap-6 hover:bg-gray-100 p-4 rounded-md transition duration-200">
-                <a href="#" class="group shrink-0 relative block h-56 w-full self-start overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-24 md:w-24 lg:h-40 lg:w-40">
-                    <img src="https://images.unsplash.com/photo-1476362555312-ab9e108a0b7e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" loading="lazy" alt="" class="group-hover:scale-110 absolute inset-0 h-full w-full object-cover object-center transition duration-200" />
-                </a> 
-                <div class="flex flex-col gap-2">
-                    <span class="text-sm text-gray-400">April 2, 2022</span>
-                    <h2 class="text-xl font-bold text-gray-800">
-                        <a href="#" class="active:text-sky-700 transition duration-100 hover:text-sky-600">The Pines and the Mountains</a>
-                    </h2>
-                    <p class="text-gray-500">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sint necessitatibus molestias explicabo.</p>
-                    <div>
-                        <a href="#" class="active:text-sky-700 font-semibold text-sky-600 transition duration-100 hover:text-sky-700">Read more</a>
+                <article class="flex flex-col items-center gap-4 md:flex-row lg:gap-6 hover:bg-gray-100 p-4 rounded-md transition duration-200">
+                    <a href="#" class="group shrink-0 relative block h-56 w-full self-start overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-24 md:w-24 lg:h-40 lg:w-40">
+                        <img src="https://images.unsplash.com/photo-1476362555312-ab9e108a0b7e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" loading="lazy" alt="" class="group-hover:scale-110 absolute inset-0 h-full w-full object-cover object-center transition duration-200" />
+                    </a> 
+                    <div class="flex flex-col gap-2">
+                        <span class="text-sm text-gray-400">April 2, 2022</span>
+                        <h2 class="text-xl font-bold text-gray-800">
+                            <a href="#" class="active:text-sky-700 transition duration-100 hover:text-primary-orange">The Pines and the Mountains</a>
+                        </h2>
+                        <p class="text-gray-500">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sint necessitatibus molestias explicabo.</p>
+                        <div>
+                            <a href="#" class="font-semibold text-primary-orange transition duration-100">Read more</a>
+                        </div>
                     </div>
-                </div>
-            </article>
+                </article>
+                
+                <article class="flex flex-col items-center gap-4 md:flex-row lg:gap-6 hover:bg-gray-100 p-4 rounded-md transition duration-200">
+                    <a href="#" class="group shrink-0 relative block h-56 w-full self-start overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-24 md:w-24 lg:h-40 lg:w-40">
+                        <img src="https://images.unsplash.com/photo-1511376777868-611b54f68947?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" loading="lazy" alt="" class="group-hover:scale-110 absolute inset-0 h-full w-full object-cover object-center transition duration-200" />
+                    </a>
+                    <div class="flex flex-col gap-2">
+                        <span class="text-sm text-gray-400">April 2, 2022</span>     
+                        <h2 class="text-xl font-bold text-gray-800">
+                            <a href="#" class="active:text-sky-700 transition duration-100 hover:text-primary-orange">The Coding Mania</a>
+                        </h2>
+                        <p class="text-gray-500">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sint necessitatibus molestias explicabo.</p>
+                        <div>
+                            <a href="#" class="font-semibold text-primary-orange transition duration-100">Read more</a>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="flex flex-col items-center gap-4 md:flex-row lg:gap-6 hover:bg-gray-100 p-4 rounded-md transition duration-200">
+                    <a href="#" class="group shrink-0 relative block h-56 w-full self-start overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-24 md:w-24 lg:h-40 lg:w-40">
+                        <img src="https://images.unsplash.com/photo-1496395031280-4201b0e022ca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" loading="lazy" alt="" class="group-hover:scale-110 absolute inset-0 h-full w-full object-cover object-center transition duration-200" />
+                    </a>
+                    <div class="flex flex-col gap-2">
+                        <span class="text-sm text-gray-400">April 2, 2022</span>
+                        <h2 class="text-xl font-bold text-gray-800">
+                            <a href="#" class="active:text-sky-700 transition duration-100 hover:text-primary-orange">Architectural Warfare</a>
+                        </h2>
+                        <p class="text-gray-500">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sint necessitatibus molestias explicabo.</p>
+                        <div>
+                            <a href="#" class="font-semibold text-primary-orange transition duration-100">Read more</a>
+                        </div>
+                    </div>
+                </article>
             
-            <article class="flex flex-col items-center gap-4 md:flex-row lg:gap-6 hover:bg-gray-100 p-4 rounded-md transition duration-200">
-                <a href="#" class="group shrink-0 relative block h-56 w-full self-start overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-24 md:w-24 lg:h-40 lg:w-40">
-                    <img src="https://images.unsplash.com/photo-1511376777868-611b54f68947?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" loading="lazy" alt="" class="group-hover:scale-110 absolute inset-0 h-full w-full object-cover object-center transition duration-200" />
-                </a>
-                <div class="flex flex-col gap-2">
-                    <span class="text-sm text-gray-400">April 2, 2022</span>     
-                    <h2 class="text-xl font-bold text-gray-800">
-                        <a href="#" class="active:text-sky-700 transition duration-100 hover:text-sky-600">The Coding Mania</a>
-                    </h2>
-                    <p class="text-gray-500">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sint necessitatibus molestias explicabo.</p>
-                    <div>
-                        <a href="#" class="active:text-sky-700 font-semibold text-sky-600 transition duration-100 hover:text-sky-700">Read more</a>
+                <article class="flex flex-col items-center gap-4 md:flex-row lg:gap-6 hover:bg-gray-100 p-4 rounded-md transition duration-200">
+                    <a href="#" class="group shrink-0 relative block h-56 w-full self-start overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-24 md:w-24 lg:h-40 lg:w-40">
+                    <img src="https://images.unsplash.com/photo-1510081887155-56fe96846e71?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=715&q=80" loading="lazy" alt="" class="group-hover:scale-110 absolute inset-0 h-full w-full object-cover object-center transition duration-200" />
+                    </a>
+                    <div class="flex flex-col gap-2">
+                        <span class="text-sm text-gray-400">April 2, 2022</span> 
+                        <h2 class="text-xl font-bold text-gray-800">
+                            <a href="#" class="active:text-sky-700 transition duration-100 hover:text-primary-orange">Blues in Architechture</a>
+                        </h2>
+                        <p class="text-gray-500">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sint necessitatibus molestias explicabo.</p>
+                        <div>
+                            <a href="#" class="font-semibold text-primary-orange transition duration-100">Read more</a>
+                        </div>
                     </div>
-                </div>
-            </article>
-            
-            <article class="flex flex-col items-center gap-4 md:flex-row lg:gap-6 hover:bg-gray-100 p-4 rounded-md transition duration-200">
-                <a href="#" class="group shrink-0 relative block h-56 w-full self-start overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-24 md:w-24 lg:h-40 lg:w-40">
-                    <img src="https://images.unsplash.com/photo-1496395031280-4201b0e022ca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" loading="lazy" alt="" class="group-hover:scale-110 absolute inset-0 h-full w-full object-cover object-center transition duration-200" />
-                </a>
-                <div class="flex flex-col gap-2">
-                    <span class="text-sm text-gray-400">April 2, 2022</span>
-                    <h2 class="text-xl font-bold text-gray-800">
-                        <a href="#" class="active:text-sky-700 transition duration-100 hover:text-sky-600">Architectural Warfare</a>
-                    </h2>
-                    <p class="text-gray-500">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sint necessitatibus molestias explicabo.</p>
-                    <div>
-                        <a href="#" class="active:text-sky-700 font-semibold text-sky-600 transition duration-100 hover:text-sky-700">Read more</a>
-                    </div>
-                </div>
-            </article>
-        
-            <article class="flex flex-col items-center gap-4 md:flex-row lg:gap-6 hover:bg-gray-100 p-4 rounded-md transition duration-200">
-                <a href="#" class="group shrink-0 relative block h-56 w-full self-start overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-24 md:w-24 lg:h-40 lg:w-40">
-                <img src="https://images.unsplash.com/photo-1510081887155-56fe96846e71?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=715&q=80" loading="lazy" alt="" class="group-hover:scale-110 absolute inset-0 h-full w-full object-cover object-center transition duration-200" />
-                </a>
-                <div class="flex flex-col gap-2">
-                    <span class="text-sm text-gray-400">April 2, 2022</span> 
-                    <h2 class="text-xl font-bold text-gray-800">
-                        <a href="#" class="active:text-sky-700 transition duration-100 hover:text-sky-600">Blues in Architechture</a>
-                    </h2>
-                    <p class="text-gray-500">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sint necessitatibus molestias explicabo.</p>
-                    <div>
-                        <a href="#" class="active:text-sky-700 font-semibold text-sky-600 transition duration-100 hover:text-sky-600">Read more</a>
-                    </div>
-                </div>
-            </article>
+                </article>
             </div>
         </div>
     </section>
     <section class="bg-gray-200">
-        <div class="container mx-auto px-20 py-16">
+        <div class="container mx-auto px-5 md:px-20 py-16">
             <div class="text-start pb-10">
-                <h6 class="text-base font-semibold text-blue-700 py-1">SERVICES</h6>
-                <h6 class="text-3xl font-bold text-sky-900">Our Services</h6>
+                <h6 class="text-base font-semibold text-primary-orange py-1">SERVICES</h6>
+                <h6 class="text-3xl font-bold text-primary-gray">Our Services</h6>
             </div>
             <div class="grid grid-cols-3 gap-7">
-                <div class="col-span-1 bg-white px-4 py-8 shadow-xl">
+                <div class="col-span-3 md:col-span-1 bg-white px-4 py-8 shadow-xl">
                     <div class="w-16">
                         <img src="https://introspectivemarketresearch.com/site/assets/files/1143/research_1.png" alt="">
                     </div>
                     <div class="px-2 py-4">
-                        <h2 class="text-base font-semibold text-sky-950">Syndicated Research</h2>
+                        <h2 class="text-base font-semibold text-primary-gray">Syndicated Research</h2>
                         <p class="text-sm font-normal text-sky-950 py-1">The world's high-growth markets are analyzed by Introspective Market Research syndicated market research reports. Automotive & transportation, electronics, semiconductors & ICT, retail & consumer products, automation and equipment, food & drinks, services & utilities, chemicals & materials, and energy, mining, oil & gas are some of the sectors covered by IMR.</p>
                     </div>
                 </div>
-                <div class="col-span-1 bg-white px-4 py-8 shadow-xl">
+                <div class="col-span-3 md:col-span-1 bg-white px-4 py-8 shadow-xl">
                     <div class="w-16">
                         <img src="https://introspectivemarketresearch.com/site/assets/files/1256/report.png" alt="">
                     </div>
                     <div class="px-2 py-4">
-                        <h2 class="text-base font-semibold text-sky-950">Custom Research</h2>
+                        <h2 class="text-base font-semibold text-primary-gray">Custom Research</h2>
                         <p class="text-sm font-normal text-sky-950 py-1">Introspective Market Research is well-equipped to meet the specific research needs of businesses with our skilled team of consultants and current research skills. Our market/business research solution is to provide accurate and high-quality research data that ensures clients' strategic success. <br>
                             With the support of its innovative research methodology, different resources, and precise datasets, Introspective Market Research provides customized research solutions.
                         </p>
                     </div>
                 </div>
-                <div class="col-span-1 bg-white px-4 py-8 shadow-xl">
+                <div class="col-span-3 md:col-span-1 bg-white px-4 py-8 shadow-xl">
                     <div class="w-16">
                         <img src="https://introspectivemarketresearch.com/site/assets/files/1464/analysis_1.png" alt="">
                     </div>
                     <div class="px-2 py-4">
-                        <h2 class="text-base font-semibold text-sky-950">Macro-Economic Analysis</h2>
+                        <h2 class="text-base font-semibold text-primary-gray">Macro-Economic Analysis</h2>
                         <p class="text-sm font-normal text-sky-950 py-1">Our comprehensive Macroeconomic analysis and long-term macroeconomic projection allow us to determine the factual state of the region and economic health which is an essential factor for industrial and business growth. Our study of substitute trends, the impact of fiscal and monetary policies, and contrary to fact simulations of the economy are all part of our macroeconomic analysis. We ensure Macro-level analysis, which provides a summary of the industry's "big picture," Granular level analysis, offering essential market analysis, estimations, and predictions for each business/SBU on an individual basis.</p>
                     </div>
                 </div>
-                <div class="col-span-1 bg-white px-4 py-8 shadow-xl">
+                <div class="col-span-3 md:col-span-1 bg-white px-4 py-8 shadow-xl">
                     <div class="w-16">
                         <img src="https://introspectivemarketresearch.com/site/assets/files/106397/consultant-service.png" alt="">
                     </div>
                     <div class="px-2 py-4">
-                        <h2 class="text-base font-semibold text-sky-950">Consulting Services</h2>
+                        <h2 class="text-base font-semibold text-primary-gray">Consulting Services</h2>
                         <p class="text-sm font-normal text-sky-950 py-1">Our consulting services offer actionable insights for our clients to overcome the market challenges and grab the emerging opportunities. With their broader and deeper knowledge of business trends, industry challenges, and new technologies and processes, our team of consultants is committed to our clients in order to help them achieve their goals. Introspective Market Research's dedicated client-centric services ensure that you can work collaboratively with our industry experts in order to attain growth strategies and recommendations.</p>
                     </div>
                 </div>
-                <div class="col-span-1 bg-white px-4 py-8 shadow-xl">
+                <div class="col-span-3 md:col-span-1 bg-white px-4 py-8 shadow-xl">
                     <div class="w-16">
                         <img src="https://introspectivemarketresearch.com/site/assets/files/106398/advantage.png" alt="">
                     </div>
                     <div class="px-2 py-4">
-                        <h2 class="text-base font-semibold text-sky-950">Competitive Benchmarking</h2>
+                        <h2 class="text-base font-semibold text-primary-gray">Competitive Benchmarking</h2>
                         <p class="text-sm font-normal text-sky-950 py-1">Introspective Market Research also provides advice to help companies acquire a competitive advantage and mitigate dangers. Our reports contain useful information that allows businesses to compare their position to that of competitors. We also provide data to assist clients in identifying experienced players in a certain market, as well as industry trends and top-performing content.</p>
                     </div>
                 </div>
-                <div class="col-span-1 bg-white px-4 py-8 shadow-xl">
+                <div class="col-span-3 md:col-span-1 bg-white px-4 py-8 shadow-xl">
                     <div class="w-16">
                         <img src="https://introspectivemarketresearch.com/site/assets/files/106399/calendar.png" alt="">
                     </div>
                     <div class="px-2 py-4">
-                        <h2 class="text-base font-semibold text-sky-950">Subscription-Based Analysis</h2>
+                        <h2 class="text-base font-semibold text-primary-gray">Subscription-Based Analysis</h2>
                         <p class="text-sm font-normal text-sky-950 py-1">This subscription includes access to all current and future IMR syndicated research reports, discounted access compared to market purchase on an individual basis for the same report, and newly launched reports are also covered under this package, monthly, quarterly, half-yearly, and yearly subscriptions, and a dedicated account manager.</p>
                     </div>
                 </div>
@@ -356,9 +373,9 @@
         </div>
     </section>
     <footer>
-        <div class="bg-sky-600">
-            <div class="container mx-auto px-20 py-4 grid grid-cols-2">
-                <div class="col-span-1 flex items-center">
+        <div class="bg-primary-orange">
+            <div class="container mx-auto px-5 md:px-20 py-4 grid grid-cols-2">
+                <div class="col-span-2 md:col-span-1 flex items-center">
                     <div>
                         <svg class="w-20 h-20 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16v-5.5C11 8.5 9.4 7 7.5 7m3.5 9H4v-5.5C4 8.5 5.6 7 7.5 7m3.5 9v4M7.5 7H14m0 0V4h2.5M14 7v3m-3.5 6H20v-6a3 3 0 0 0-3-3m-2 9v4m-8-6.5h1"/>
@@ -369,7 +386,7 @@
                         <p class="text-sm font-normal text-gray-100 py-1">Stay in touch with us to get latest news and discount coupons.</p>
                     </div>
                 </div>
-                <div class="col-span-1 flex items-center justify-end">
+                <div class="col-span-2 md:col-span-1 flex items-center justify-center md:justify-end">
                     <form action="#">
                         <div class="items-center mx-auto mb-3 space-y-4 max-w-screen-sm sm:flex sm:space-y-0">
                             <div class="relative w-full">
@@ -380,64 +397,64 @@
                                 <input class="block p-3 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:rounded-none sm:rounded-l-lg focus:ring-primary-500 focus:border-primary-500" placeholder="Enter your email" type="email" id="email" required="">
                             </div>
                             <div>
-                                <button type="submit" class="py-3 px-5 w-full text-sm font-medium text-center text-white rounded-lg border cursor-pointer bg-sky-700 border-sky-600 sm:rounded-none sm:rounded-r-lg hover:bg-sky-800 focus:ring-4 focus:ring-sky-300">Subscribe</button>
+                                <button type="submit" class="py-3 px-5 w-full text-sm font-medium text-center text-white rounded-lg border cursor-pointer bg-primary-gray border-primary-gray sm:rounded-none sm:rounded-r-lg hover:bg-primary-gray focus:ring-4 focus:bg-primary-gray">Subscribe</button>
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
-        <div class="container mx-auto px-20 py-5">
+        <div class="container mx-auto px-5 md:px-20 py-5">
             <div class="grid grid-cols-3">
-                <div class="col-span-1 flex">
+                <div class="col-span-3 md:col-span-1 flex">
                     <div>
-                        <svg class="w-16 h-16 text-teal-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <svg class="w-16 h-16 text-slate-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                             <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="m3.5 5.5 7.9 6c.4.3.8.3 1.2 0l7.9-6M4 19h16c.6 0 1-.4 1-1V6c0-.6-.4-1-1-1H4a1 1 0 0 0-1 1v12c0 .6.4 1 1 1Z"/>
                         </svg>
                     </div>
                     <div class="pt-2 pl-2">
-                        <h2 class="text-xl font-semibold text-sky-800">Email Us</h2>
-                        <p class="text-sm font-normal text-sky-900 py-1 hover:underline">sales@website.com</p>
+                        <h2 class="text-xl font-semibold text-primary-gray">Email Us</h2>
+                        <p class="text-sm font-normal text-primary-orange py-1 hover:underline">sales@website.com</p>
                     </div>
                 </div>
-                <div class="col-span-1 flex">
+                <div class="col-span-3 md:col-span-1 flex">
                     <div>
-                        <svg class="w-16 h-16 text-teal-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <svg class="w-16 h-16 text-slate-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m18.4 14.8-1.2-1.3a1.7 1.7 0 0 0-2.4 0l-.7.7a1.7 1.7 0 0 1-2.4 0l-1.9-1.9a1.7 1.7 0 0 1 0-2.4l.7-.6a1.7 1.7 0 0 0 0-2.5L9.2 5.6a1.6 1.6 0 0 0-2.4 0c-3.2 3.2-1.7 6.9 1.5 10 3.2 3.3 7 4.8 10.1 1.6a1.6 1.6 0 0 0 0-2.4Z"/>
                           </svg>
                     </div>
                     <div class="pt-2 pl-2">
-                        <h2 class="text-xl font-semibold text-sky-800">Contact Us</h2>
-                        <p class="text-sm font-normal text-sky-900 py-1 hover:underline">+91 1234567890</p>
-                        <p class="text-sm font-normal text-sky-900 py-1 hover:underline">+91 1234567890</p>
+                        <h2 class="text-xl font-semibold text-primary-gray">Contact Us</h2>
+                        <p class="text-sm font-normal text-primary-orange py-1 hover:underline">+91 1234567890</p>
+                        <p class="text-sm font-normal text-primary-orange py-1 hover:underline">+91 1234567890</p>
                     </div>
                 </div>
-                <div class="col-span-1 flex">
+                <div class="col-span-3 md:col-span-1 flex">
                     <div>
-                        <svg class="w-16 h-16 text-teal-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <svg class="w-16 h-16 text-slate-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m17 21-5-4-5 4V3.9c0-.2 0-.5.2-.6l.6-.3h8.4c.2 0 .4 0 .6.3l.2.6V21Z"/>
                         </svg>
                     </div>
                     <div class="pt-2 pl-2">
-                        <h2 class="text-xl font-semibold text-sky-800 pb-2">Address</h2>
-                        <h2 class="text-xl font-semibold text-sky-800 pb-2">US Office</h2>
-                        <p class="text-sm font-normal text-sky-900 py-1 hover:underline">Introspective Market Research, South King Drive, Chicago, IL</p>
-                        <h2 class="text-xl font-semibold text-sky-800 pb-2">APAC Office</h2>
-                        <p class="text-sm font-normal text-sky-900 py-1 hover:underline">Introspective Market Research, Office No. 101, Saudamini Commercial Complex, Chandani Chowk, Kothrud, Pune India 411038</p>
+                        <h2 class="text-xl font-semibold text-primary-gray pb-2">Address</h2>
+                        <h2 class="text-xl font-semibold text-primary-orange pb-2">US Office</h2>
+                        <p class="text-sm font-normal text-primary-orange py-1 hover:underline">Introspective Market Research, South King Drive, Chicago, IL</p>
+                        <h2 class="text-xl font-semibold text-primary-gray pb-2">APAC Office</h2>
+                        <p class="text-sm font-normal text-primary-orange py-1 hover:underline">Introspective Market Research, Office No. 101, Saudamini Commercial Complex, Chandani Chowk, Kothrud, Pune India 411038</p>
                     </div>
                 </div>
             </div>
         </div>
         <hr class="h-px my-6 bg-gray-400 border-0">
         <div>
-            <div class="container mx-auto px-20 py-8">
+            <div class="container mx-auto px-5 md:px-20 py-8">
                 <div class="grid grid-cols-5">
-                    <div class="col-span-2">
+                    <div class="col-span-5 md:col-span-2">
                         <img src="https://placehold.co/400" alt="" class="w-40">
                         <span class="text-xs font-light text-sky-900">Website name</span>
                         <p class="text-base font-normal text-sky-900 pr-5">We Introspective Market Research holds expertise in providing latest, authentic and reliable research reports across all the business verticals.</p>
                     </div>
-                    <div class="col-span-1">
+                    <div class="col-span-5 md:col-span-1">
                         <h2 class="text-2xl font-semibold text-sky-800 pb-3">About Us</h2>
                         <ul>
                             <li class="text-sm text-gray-900 font-normal flex py-1.5 hover:underline hover:text-sky-700">
@@ -505,7 +522,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="col-span-1">
+                    <div class="col-span-5 md:col-span-1">
                         <h2 class="text-2xl font-semibold text-sky-800 pb-3">News Room</h2>
                         <ul>
                             <li class="text-sm text-gray-900 font-normal flex py-1.5 hover:underline hover:text-sky-700">
@@ -573,7 +590,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="col-span-1">
+                    <div class="col-span-5 md:col-span-1">
                         <h2 class="text-2xl font-semibold text-sky-800 pb-3">Industry Verticals</h2>
                         <ul>
                             <li class="text-sm text-gray-900 font-normal flex py-1.5 hover:underline hover:text-sky-700">
@@ -655,4 +672,23 @@
         </div>
     </footer>
 </body>
+<!-- Link to Tiny Slider JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/min/tiny-slider.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var slider = tns({
+            container: '.my-slider',
+            items: 1,
+            slideBy: 'page',
+            autoplay: true,
+            autoplayTimeout: 3000,
+            controls: false,
+            nav: false,
+            autoplayButtonOutput: false,
+            mouseDrag: true,
+            loop: true,
+        });
+    });
+</script>
 </html>

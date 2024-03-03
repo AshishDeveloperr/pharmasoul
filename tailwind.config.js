@@ -4,7 +4,12 @@ module.exports = {
   "./*.{html,php}",
   "./src/css/**/*.css",],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'primary-orange': '#E2802F',
+        'primary-gray': '#201C1B',
+      },
+    },
   },
   plugins: [],
 }
