@@ -8,7 +8,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $author =  $_SESSION['username']; 
     $category =  $_POST['category'];
     $tag =  $_POST['tag'];
-    $content = $_POST['input'];
+    $contentTab1 = $_POST['input1'];
+    $contentTab2 = $_POST['input2'];
+    $contentTab3 = $_POST['input3'];
     $featured_img = $_POST['featured_img'];
     $featured_img_alt = $_POST['featured_img_alt'];
     $title = $_POST['title'];
@@ -47,12 +49,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Check number of rows returned
             if (mysqli_stmt_num_rows($checkStmt) > 0) {
                 // perform update
-                $updateSql = "UPDATE posts SET `post_author`=?, `post_category`=?, `post_tag`=?, `post_content`=?, `post_featured_img`=?, `post_featured_img_alt`=?, `post_title`=?, `post_status`=?, `post_slug`=?, `post_slug_old`=?, `post_info1`=?, `post_info2`=?, `post_info3`=?, `post_meta_desc`=?, `post_modified`=? WHERE post_id = ?";
+                $updateSql = "UPDATE posts SET `post_author`=?, `post_category`=?, `post_tag`=?, `post_content1`=?, `post_content2`=?, `post_content3`=?, `post_featured_img`=?, `post_featured_img_alt`=?, `post_title`=?, `post_status`=?, `post_slug`=?, `post_slug_old`=?, `post_info1`=?, `post_info2`=?, `post_info3`=?, `post_meta_desc`=?, `post_modified`=? WHERE post_id = ?";
                 $updateStmt = mysqli_prepare($conn, $updateSql);
 
                 if ($updateStmt) {
                     // Bind parameters to the statement
-                    mysqli_stmt_bind_param($updateStmt, "sssssssssssssssi", $author, $category, $tag, $content, $featured_img, $featured_img_alt, $title, $status, $slug, $slugOld, $quickInfo1, $quickInfo2, $quickInfo3, $postMetaDesc, $currentIndianTime, $post_id);
+                    mysqli_stmt_bind_param($updateStmt, "sssssssssssssssssi", $author, $category, $tag, $contentTab1, $contentTab2, $contentTab3, $featured_img, $featured_img_alt, $title, $status, $slug, $slugOld, $quickInfo1, $quickInfo2, $quickInfo3, $postMetaDesc, $currentIndianTime, $post_id);
 
                     // Execute the statement
                     if (mysqli_stmt_execute($updateStmt)) {
@@ -68,12 +70,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 }
             } else {
                 // insert a new one
-                $insertSql = "INSERT INTO posts (`post_id`,`post_author`, `post_category`, `post_tag`, `post_content`, `post_featured_img`, `post_featured_img_alt`, `post_title`, `post_status`, `post_slug`, `post_slug_old`, `post_info1`, `post_info2`, `post_info3`, `post_meta_desc`, `post_date`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                $insertSql = "INSERT INTO posts (`post_id`, `post_author`, `post_category`, `post_tag`, `post_content1`, `post_content2`, `post_content3`, `post_featured_img`, `post_featured_img_alt`, `post_title`, `post_status`, `post_slug`, `post_slug_old`, `post_info1`, `post_info2`, `post_info3`, `post_meta_desc`, `post_date`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
                 $insertStmt = mysqli_prepare($conn, $insertSql);
 
                 if ($insertStmt) {
                     // Bind parameters to the statement
-                    mysqli_stmt_bind_param($insertStmt, "isssssssssssssss", $post_id, $author, $category, $tag, $content, $featured_img, $featured_img_alt, $title, $status, $slug, $slugOld, $quickInfo1, $quickInfo2, $quickInfo3, $postMetaDesc, $currentIndianTime);
+                    mysqli_stmt_bind_param($insertStmt, "isssssssssssssssss", $post_id, $author, $category, $tag, $contentTab1, $contentTab2, $contentTab3, $featured_img, $featured_img_alt, $title, $status, $slug, $slugOld, $quickInfo1, $quickInfo2, $quickInfo3, $postMetaDesc, $currentIndianTime);
 
                     // Execute the statement
                     if (mysqli_stmt_execute($insertStmt)) {

@@ -38,7 +38,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['buttonType'])) {
     $author =  $_SESSION['username']; 
     $category =  $_POST['category'];
     $tag =  $_POST['tag'];
-    $content = $_POST['input'];
+    $contentTab1 = $_POST['input1'];
+    $contentTab2 = $_POST['input2'];
+    $contentTab3 = $_POST['input3'];
     $featured_img = $_POST['featured_img'];
     $featured_img_alt = $_POST['featured_img_alt'];
     $title = $_POST['title'];
@@ -61,10 +63,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['buttonType'])) {
     $indianTime = new DateTime('now', new DateTimeZone('Asia/Kolkata'));
     $currentIndianTime = $indianTime->format('Y-m-d H:i:s');
 
-    $sql = "UPDATE `posts` SET `post_author`=?, `post_category`=?, `post_tag`=?, `post_content`=?, `post_featured_img`=?, `post_featured_img_alt`=?, `post_title`=?, `post_status`=?, `post_slug`=?, `post_slug_old`=?, `post_info1`=?, `post_info2`=?, `post_info3`=?, `post_meta_desc`=?, `post_modified`=? WHERE post_id = ?";
+    $sql = "UPDATE `posts` SET `post_author`=?, `post_category`=?, `post_tag`=?, `post_content1`=?, `post_content2`=?, `post_content3`=?, `post_featured_img`=?, `post_featured_img_alt`=?, `post_title`=?, `post_status`=?, `post_slug`=?, `post_slug_old`=?, `post_info1`=?, `post_info2`=?, `post_info3`=?, `post_meta_desc`=?, `post_modified`=? WHERE post_id = ?";
     $stmt = $conn->prepare($sql);
 
-    $stmt->bind_param("sssssssssssssssi", $author, $category, $tag, $content, $featured_img, $featured_img_alt, $title, $status, $slug, $slugOld, $quickInfo1, $quickInfo2, $quickInfo3, $postMetaDesc, $currentIndianTime, $post_id);
+    $stmt->bind_param("sssssssssssssssssi", $author, $category, $tag, $contentTab1, $contentTab2, $contentTab3, $featured_img, $featured_img_alt, $title, $status, $slug, $slugOld, $quickInfo1, $quickInfo2, $quickInfo3, $postMetaDesc, $currentIndianTime, $post_id);
 
     $stmt->execute();
 
@@ -98,13 +100,13 @@ $conn->close();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/output.css">
 
-    <link rel="icon" href="https://medbiography.com/src/uploads/favicon.webp" type="image/x-icon">
+    <link rel="icon" href="../../img/ultramr.webp" type="image/x-icon">
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
-    <title>MedBiography</title>
+    <title>PharmaSoul</title>
     <style>
         #container {
             width: 1000px;
@@ -122,6 +124,10 @@ $conn->close();
         .ck-restricted-editing_mode_standard.ck-content.ck-editor__editable.ck-rounded-corners{
             padding:5px 20px;
         }
+
+        .tab {
+            display: none;
+        }
         </style>
 </head>
 <body class="bg-gray-100">
@@ -131,15 +137,15 @@ $conn->close();
     <section>
         <div class="grid grid-cols-7">
             <aside class="col-span-1">
-                <div class="h-screen fixed px-4 bg-[#1d2327] pt-10 w-[14%]">
-                    <ul class="space-y-3 text-gray-200 list-inside text-base font-normal">
+                <div class="h-screen fixed px-4 bg-slate-200 pt-10 w-[14%]">
+                    <ul class="space-y-3 text-primary-gray list-inside text-base font-normal">
                         <li>
                             Dashboard
                         </li>
                     </ul>
                     <div class="categories_filter_dropdown">
                         <div class="dropdown inline-block relative">
-                            <button class="text-gray-200 text-base font-normal py-2 rounded inline-flex items-center">
+                            <button class="text-primary-gray text-base font-normal py-2 rounded inline-flex items-center">
                                 <span class="mr-1">Posts</span>
                                 <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                                     <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path> 
@@ -155,7 +161,7 @@ $conn->close();
                     </div>
                     <div class="menu_dropdown">
                         <div class="dropdown inline-block relative">
-                            <button class="text-gray-200 text-base pb-1 font-normal  rounded inline-flex items-center">
+                            <button class="text-primary-gray text-base pb-1 font-normal  rounded inline-flex items-center">
                                 <span class="mr-1">Media</span>
                                 <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                                     <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path> 
@@ -169,7 +175,7 @@ $conn->close();
                     </div>
                     <div class="menu_dropdown pb-2">
                         <div class="dropdown inline-block relative">
-                            <button class="text-gray-200 text-base pb-1 font-normal  rounded inline-flex items-center">
+                            <button class="text-primary-gray text-base pb-1 font-normal  rounded inline-flex items-center">
                                 <span class="mr-1">Users</span>
                                 <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                                     <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path> 
@@ -187,7 +193,7 @@ $conn->close();
                     </div>
                 </div>
             </aside>
-            <div class="col-span-6">
+            <div class="col-span-6 mt-4">
                 <form method="POST" id="autosave-form">
                     <div class="grid grid-cols-6">
                         <div class="col-span-5">
@@ -199,11 +205,42 @@ $conn->close();
                                     <span class="text-sm font-medium text-gray-900 pr-1">Permalink: </span>
                                     <input name="slug" id="slug-input" class="text-sm w-full py-1 px-2 border border-gray-300 outline-none" placeholder="Add Permalink Here..." required>
                                 </div>
-                                <textarea id="editor" name="input">
-                                    <figure class="table"><table><tbody><tr><td>Profession</td><td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae suscipit nostrum commodi explicabo non amet esse consequatur,&nbsp;</td></tr><tr><td colspan="2"><h2>Physical Stats &amp; More</h2></td></tr><tr><td>Height (approx.)</td><td>&nbsp;</td></tr><tr><td>Weight (approx.)</td><td>&nbsp;</td></tr><tr><td>Eye Colour</td><td>&nbsp;</td></tr><tr><td>Hair Colour</td><td>&nbsp;</td></tr><tr><td colspan="2"><h2>Career</h2></td></tr><tr><td>Awards &amp; Honours</td><td>&nbsp;</td></tr><tr><td colspan="2"><h2>Personal Life</h2></td></tr><tr><td>Date of Birth</td><td>&nbsp;</td></tr><tr><td>Age (as of 2023)</td><td>&nbsp;</td></tr><tr><td>Birthplace</td><td>&nbsp;</td></tr><tr><td>Zodiac sign</td><td>&nbsp;</td></tr><tr><td>Nationality</td><td>&nbsp;</td></tr><tr><td>Hometown</td><td>&nbsp;</td></tr><tr><td>School</td><td>&nbsp;</td></tr><tr><td>College/University</td><td>&nbsp;</td></tr><tr><td>Educational Qualification(s)</td><td>&nbsp;</td></tr><tr><td>Religion</td><td>&nbsp;</td></tr><tr><td>Food Habit</td><td>&nbsp;</td></tr><tr><td>Address</td><td>&nbsp;</td></tr><tr><td>Tattoo</td><td>&nbsp;</td></tr><tr><td>Controversies</td><td>&nbsp;</td></tr><tr><td colspan="2"><h2>Relationships &amp; More</h2></td></tr><tr><td>Marital Status</td><td>&nbsp;</td></tr><tr><td>Marriage Date</td><td>&nbsp;</td></tr><tr><td colspan="2"><h2>Family</h2></td></tr><tr><td>Wife/Spouse</td><td>&nbsp;</td></tr><tr><td>Children</td><td>&nbsp;</td></tr><tr><td>Parents</td><td>&nbsp;</td></tr><tr><td colspan="2"><h2>Style Quotient</h2></td></tr><tr><td>Car Collection</td><td>&nbsp;</td></tr></tbody></table></figure><p>&nbsp;</p><h2>Some Lesser Known Facts About Cyriac Abby Philips</h2><ul style="list-style-type:disc"><li>Lorem ipsum dolor sit amet consectetur adipisicing elit.&nbsp;</li><li>Lorem ipsum dolor sit amet consectetur adipisicing elit.&nbsp;</li></ul><p>&nbsp;</p>
-                                </textarea>
+
+
+                                <div class="mb-6">
+                                    <span class="cursor-pointer bg-teal-800 text-white px-2 py-1 mx-2" onclick="openTab(event, 'editor1')">Button1</span>
+                                    <span class="cursor-pointer bg-teal-800 text-white px-2 py-1 mx-2" onclick="openTab(event, 'editor2')">Button 2</span>
+                                    <span class="cursor-pointer bg-teal-800 text-white px-2 py-1 mx-2" onclick="openTab(event, 'editor3')">Button 3</span>
+                                </div>
+
+                                <div id="editor1" class="tab">
+                                    <textarea class="editor1" id="editor" name="input1">1</textarea>
+                                </div>
+
+                                <div id="editor2" class="tab">
+                                    <textarea class="editor2" id="editor" name="input2">2</textarea>
+                                </div>
+
+                                <div id="editor3" class="tab">
+                                    <textarea class="editor3" id="editor" name="input3">3</textarea>
+                                </div>
+
+
+                                <script>
+                                function openTab(evt, tabName) {
+                                    var i, tabcontent, tablinks;
+                                    tabcontent = document.getElementsByClassName("tab");
+                                    for (i = 0; i < tabcontent.length; i++) {
+                                    tabcontent[i].style.display = "none";
+                                    }
+                                    document.getElementById(tabName).style.display = "block";
+                                }
+                                </script>
+
                             </div>
                         </div>
+
+                        
                         <aside class="col-span-1 pl-2 pr-4 py-8">
                             <div class="px-4 py-4 border border-gray-300 rounded-md bg-white">
                                 <div class="border-b border-gray-300 pb-2">
@@ -333,155 +370,162 @@ $conn->close();
             <script src="https://cdn.ckeditor.com/ckeditor5/40.1.0/super-build/translations/es.js"></script>
         -->
         <script>
-            CKEDITOR.ClassicEditor.create(document.getElementById("editor"), {
-                toolbar: {
-                    items: [  
-                        'findAndReplace', 'selectAll', '|',
-                        'heading', '|',
-                        'bold', 'italic', 'strikethrough', 'underline', 'code', 'subscript', 'superscript', 'removeFormat', '|',
-                        'bulletedList', 'numberedList', 'todoList', '|',
-                        'outdent', 'indent', '|',
-                        'undo', 'redo',
-                        '-',
-                        'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor', 'highlight', '|',
-                        'alignment', '|',
-                        'link', 'insertImage', 'blockQuote', 'insertTable', 'mediaEmbed', 'htmlEmbed', '|',
-                        'specialCharacters', 'horizontalLine', 'pageBreak', '|',
-                        'textPartLanguage', '|',
-                        'sourceEditing'
-                    ],
-                    shouldNotGroupWhenFull: true
-                },
-                list: {
-                    properties: {
-                        styles: true,
-                        startIndex: true,
-                        reversed: true
-                    }
-                },
-                mediaEmbed: {
-                    previewsInData: true,
-                },
-                heading: {
-                    options: [
-                        { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
-                        { model: 'heading1', view: 'h1', title: 'Heading 1', class: 'ck-heading_heading1' },
-                        { model: 'heading2', view: 'h2', title: 'Heading 2', class: 'ck-heading_heading2' },
-                        { model: 'heading3', view: 'h3', title: 'Heading 3', class: 'ck-heading_heading3' },
-                        { model: 'heading4', view: 'h4', title: 'Heading 4', class: 'ck-heading_heading4' },
-                        { model: 'heading5', view: 'h5', title: 'Heading 5', class: 'ck-heading_heading5' },
-                        { model: 'heading6', view: 'h6', title: 'Heading 6', class: 'ck-heading_heading6' }
-                    ]
-                },
-                placeholder: 'Welcome to CKEditor&nbsp;5!',
-                fontFamily: {
-                    options: [
-                        'default',
-                        'Arial, Helvetica, sans-serif',
-                        'Courier New, Courier, monospace',
-                        'Georgia, serif',
-                        'Lucida Sans Unicode, Lucida Grande, sans-serif',
-                        'Tahoma, Geneva, sans-serif',
-                        'Times New Roman, Times, serif',
-                        'Trebuchet MS, Helvetica, sans-serif',
-                        'Verdana, Geneva, sans-serif'
-                    ],
-                    supportAllValues: true
-                },
-                fontSize: {
-                    options: [ 10, 12, 14, 'default', 18, 20, 22 ],
-                    supportAllValues: true
-                },
-                htmlSupport: {
-                    allow: [
-                        {
-                            name: /.*/,
-                            attributes: true,
-                            classes: true,
-                            styles: true
-                        }
-                    ]
-                },
-                htmlEmbed: {
-                    showPreviews: true
-                },
-                link: {
-                    decorators: {
-                        addTargetToExternalLinks: true,
-                        defaultProtocol: 'https://',
-                        toggleDownloadable: {
-                            mode: 'manual',
-                            label: 'Downloadable',
-                            attributes: {
-                                download: 'file'
-                            }
-                        },
-                        openInNewTab: {
-                            mode: 'manual',
-                            label: 'Open in a new tab',
-                            defaultValue: true,	
-                            attributes: {
-                                target: '_blank',
-                                rel: 'noopener'
-                            }
-                        }
-                    }
-                },
-                mention: {
-                    feeds: [
-                        {
-                            marker: '@',
-                            feed: [
-                                '@apple', '@bears', '@brownie', '@cake', '@cake', '@candy', '@canes', '@chocolate', '@cookie', '@cotton', '@cream',
-                                '@cupcake', '@danish', '@donut', '@dragée', '@fruitcake', '@gingerbread', '@gummi', '@ice', '@jelly-o',
-                                '@liquorice', '@macaroon', '@marzipan', '@oat', '@pie', '@plum', '@pudding', '@sesame', '@snaps', '@soufflé',
-                                '@sugar', '@sweet', '@topping', '@wafer'
-                            ],
-                            minimumCharacters: 1
-                        }
-                    ]
-                },
-                removePlugins: [
-                    'ExportPdf',
-                    'ExportWord',
-                    'AIAssistant',
-                    'CKBox',
-                    'CKFinder',
-                    'EasyImage',
-                    // This sample uses the Base64UploadAdapter to handle image uploads as it requires no configuration.
-                    // https://ckeditor.com/docs/ckeditor5/latest/features/images/image-upload/base64-upload-adapter.html
-                    // Storing images as Base64 is usually a very bad idea.
-                    // Replace it on production website with other solutions:
-                    // https://ckeditor.com/docs/ckeditor5/latest/features/images/image-upload/image-upload.html
-                    // 'Base64UploadAdapter',
-                    'RealTimeCollaborativeComments',
-                    'RealTimeCollaborativeTrackChanges',
-                    'RealTimeCollaborativeRevisionHistory',
-                    'PresenceList',
-                    'Comments',
-                    'TrackChanges',
-                    'TrackChangesData',
-                    'RevisionHistory',
-                    'Pagination',
-                    'WProofreader',
-                    // Careful, with the Mathtype plugin CKEditor will not load when loading this sample
-                    // from a local file system (file://) - load this site via HTTP server if you enable MathType.
-                    'MathType',
-                    // The following features are part of the Productivity Pack and require additional license.
-                    'SlashCommand',
-                    'Template',
-                    'DocumentOutline',
-                    'FormatPainter',
-                    'TableOfContents',
-                    'PasteFromOfficeEnhanced'
+            var editor;
+            var textareas = document.querySelectorAll('.tab textarea');
+textareas.forEach(function(editorTextarea) {
+    CKEDITOR.ClassicEditor
+        .create(editorTextarea, {
+            toolbar: {
+                items: [  
+                    'findAndReplace', 'selectAll', '|',
+                    'heading', '|',
+                    'bold', 'italic', 'strikethrough', 'underline', 'code', 'subscript', 'superscript', 'removeFormat', '|',
+                    'bulletedList', 'numberedList', 'todoList', '|',
+                    'outdent', 'indent', '|',
+                    'undo', 'redo',
+                    '-',
+                    'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor', 'highlight', '|',
+                    'alignment', '|',
+                    'link', 'insertImage', 'blockQuote', 'insertTable', 'mediaEmbed', 'htmlEmbed', '|',
+                    'specialCharacters', 'horizontalLine', 'pageBreak', '|',
+                    'textPartLanguage', '|',
+                    'sourceEditing'
+                ],
+                shouldNotGroupWhenFull: true
+            },
+            list: {
+                properties: {
+                    styles: true,
+                    startIndex: true,
+                    reversed: true
+                }
+            },
+            mediaEmbed: {
+                previewsInData: true,
+            },
+            heading: {
+                options: [
+                    { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
+                    { model: 'heading1', view: 'h1', title: 'Heading 1', class: 'ck-heading_heading1' },
+                    { model: 'heading2', view: 'h2', title: 'Heading 2', class: 'ck-heading_heading2' },
+                    { model: 'heading3', view: 'h3', title: 'Heading 3', class: 'ck-heading_heading3' },
+                    { model: 'heading4', view: 'h4', title: 'Heading 4', class: 'ck-heading_heading4' },
+                    { model: 'heading5', view: 'h5', title: 'Heading 5', class: 'ck-heading_heading5' },
+                    { model: 'heading6', view: 'h6', title: 'Heading 6', class: 'ck-heading_heading6' }
                 ]
-            })
-            .then(instance => {
-                editor = instance;
-            })
-            .catch(error => {
-                console.error(error);
-            });
+            },
+            placeholder: 'Welcome to CKEditor&nbsp;5!',
+            fontFamily: {
+                options: [
+                    'default',
+                    'Arial, Helvetica, sans-serif',
+                    'Courier New, Courier, monospace',
+                    'Georgia, serif',
+                    'Lucida Sans Unicode, Lucida Grande, sans-serif',
+                    'Tahoma, Geneva, sans-serif',
+                    'Times New Roman, Times, serif',
+                    'Trebuchet MS, Helvetica, sans-serif',
+                    'Verdana, Geneva, sans-serif'
+                ],
+                supportAllValues: true
+            },
+            fontSize: {
+                options: [ 10, 12, 14, 'default', 18, 20, 22 ],
+                supportAllValues: true
+            },
+            htmlSupport: {
+                allow: [
+                    {
+                        name: /.*/,
+                        attributes: true,
+                        classes: true,
+                        styles: true
+                    }
+                ]
+            },
+            htmlEmbed: {
+                showPreviews: true
+            },
+            link: {
+                decorators: {
+                    addTargetToExternalLinks: true,
+                    defaultProtocol: 'https://',
+                    toggleDownloadable: {
+                        mode: 'manual',
+                        label: 'Downloadable',
+                        attributes: {
+                            download: 'file'
+                        }
+                    },
+                    openInNewTab: {
+                        mode: 'manual',
+                        label: 'Open in a new tab',
+                        defaultValue: true,    
+                        attributes: {
+                            target: '_blank',
+                            rel: 'noopener'
+                        }
+                    }
+                }
+            },
+            mention: {
+                feeds: [
+                    {
+                        marker: '@',
+                        feed: [
+                            '@apple', '@bears', '@brownie', '@cake', '@cake', '@candy', '@canes', '@chocolate', '@cookie', '@cotton', '@cream',
+                            '@cupcake', '@danish', '@donut', '@dragée', '@fruitcake', '@gingerbread', '@gummi', '@ice', '@jelly-o',
+                            '@liquorice', '@macaroon', '@marzipan', '@oat', '@pie', '@plum', '@pudding', '@sesame', '@snaps', '@soufflé',
+                            '@sugar', '@sweet', '@topping', '@wafer'
+                        ],
+                        minimumCharacters: 1
+                    }
+                ]
+            },
+            removePlugins: [
+                'ExportPdf',
+                'ExportWord',
+                'AIAssistant',
+                'CKBox',
+                'CKFinder',
+                'EasyImage',
+                // This sample uses the Base64UploadAdapter to handle image uploads as it requires no configuration.
+                // https://ckeditor.com/docs/ckeditor5/latest/features/images/image-upload/base64-upload-adapter.html
+                // Storing images as Base64 is usually a very bad idea.
+                // Replace it on production website with other solutions:
+                // https://ckeditor.com/docs/ckeditor5/latest/features/images/image-upload/image-upload.html
+                // 'Base64UploadAdapter',
+                'RealTimeCollaborativeComments',
+                'RealTimeCollaborativeTrackChanges',
+                'RealTimeCollaborativeRevisionHistory',
+                'PresenceList',
+                'Comments',
+                'TrackChanges',
+                'TrackChangesData',
+                'RevisionHistory',
+                'Pagination',
+                'WProofreader',
+                // Careful, with the Mathtype plugin CKEditor will not load when loading this sample
+                // from a local file system (file://) - load this site via HTTP server if you enable MathType.
+                'MathType',
+                // The following features are part of the Productivity Pack and require additional license.
+                'SlashCommand',
+                'Template',
+                'DocumentOutline',
+                'FormatPainter',
+                'TableOfContents',
+                'PasteFromOfficeEnhanced'
+            ]
+        })
+        .then(editorInstance => {
+            // Assign the editor instance
+            editor = editorInstance;
+        })
+        .catch(error => {
+            console.error(error);
+        });
+});
+
         </script>
         <script>
             function dismissAlert(alertId) {
@@ -508,37 +552,38 @@ $conn->close();
 
         <script>
 
-        function autosave() {
-            if (editor) {
-                var content = editor.getData();
-                var formData = $('#autosave-form').serialize() + '&input=' + encodeURIComponent(content);
+        // function autosave() {
+        //     if (editor) {
+        //         var content = editor.getData();
+        //         var formData = $('#autosave-form').serialize() + '&input=' + encodeURIComponent(content);
 
-                $.ajax({
-                    type: 'POST',
-                    url: 'save_scripts/save_new.php',
-                    data: formData,
-                    success: function (response) {
-                        console.log('Autosave successful:', response);
-                    },
-                    error: function (error) {
-                        console.error('Error during autosave:', error);
-                    }
-                });
-            } else {
-                console.error('CKEditor instance not found.');
-            }
-        }
+        //         $.ajax({
+        //             type: 'POST',
+        //             url: 'save_scripts/save_new.php',
+        //             data: formData,
+        //             success: function (response) {
+        //                 console.log('Autosave successful:', response);
+        //             },
+        //             error: function (error) {
+        //                 console.error('Error during autosave:', error);
+        //             }
+        //         });
+        //     } else {
+        //         console.error('CKEditor instance not found.');
+        //     }
+        // }
 
-        // Initial call after 15 sec
-        var intervalId = setInterval(function() {
-            autosave();
-            clearInterval(intervalId);
+        // // Initial call after 15 sec
+        // var intervalId = setInterval(function() {
+        //     autosave();
+        //     clearInterval(intervalId);
             
-            setInterval(function() {
-                autosave();
-            }, 60000);
+        //     setInterval(function() {
+        //         autosave();
+        //     }, 60000);
             
-        }, 15000);
+        // }, 15000);
+
 
         </script>
 </body>

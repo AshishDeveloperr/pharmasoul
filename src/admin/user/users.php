@@ -72,7 +72,7 @@ if (isset($_REQUEST['deleteUser']) && $_SESSION['userrole'] === 'administrator')
                             Dashboard
                         </li>
                     </ul>
-                    <!-- <div class="menu_dropdown">
+                    <div class="menu_dropdown">
                         <div class="dropdown inline-block relative">
                             <button class="text-primary-gray text-base font-normal py-2 rounded inline-flex items-center">
                                 <span class="mr-1">Posts</span>
@@ -87,7 +87,7 @@ if (isset($_REQUEST['deleteUser']) && $_SESSION['userrole'] === 'administrator')
                                 <li><a href="../category/categories.php" class="py-0.5 px-2 block whitespace-no-wrap hover:text-blue-600">Tags</a></li>
                             </ul>
                         </div>
-                    </div> -->
+                    </div>
                     <div class="menu_dropdown">
                         <div class="dropdown inline-block relative">
                             <button class="text-primary-gray text-base pb-1 font-normal  rounded inline-flex items-center">

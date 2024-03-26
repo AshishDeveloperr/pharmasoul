@@ -118,13 +118,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/output.css">
 
-    <link rel="icon" href="https://medbiography.com/src/uploads/favicon.webp" type="image/x-icon">
+    <link rel="icon" href="../../img/ultramr.webp" type="image/x-icon">
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
-    <title>MedBiography</title>
+    <title>PharmaSoul</title>
 </head>
 <style>
 .search_action {
@@ -146,21 +146,21 @@
     <section>
         <div class="grid grid-cols-7">
             <aside class="col-span-1">
-                <div class="h-screen fixed px-4 bg-[#1d2327] pt-10 w-[14%]">
-                    <ul class="space-y-3 text-gray-200 list-inside text-base font-normal">
+                <div class="h-screen fixed px-4 bg-slate-200 pt-16 w-[14%]">
+                    <ul class="space-y-3 text-primary-gray list-inside text-base font-normal">
                         <li>
                             Dashboard
                         </li>
                     </ul>
                     <div class="categories_filter_dropdown">
                         <div class="dropdown inline-block relative">
-                            <button class="text-gray-200 text-base font-normal py-1 rounded inline-flex items-center">
+                            <button class="text-primary-gray text-base font-normal py-1 rounded inline-flex items-center">
                                 <span class="mr-1">Posts</span>
                                 <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                                     <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path> 
                                 </svg>
                             </button>
-                            <ul class="dropdown-menu relative hidden text-gray-200 pt-0.5 z-30 w-full text-base font-normal">
+                            <ul class="dropdown-menu relative hidden text-primary-gray pt-0.5 z-30 w-full text-base font-normal">
                                 <li><a href="posts.php" class="py-0.5 px-2 block whitespace-no-wrap hover:text-blue-600">All Posts</a></li>
                                 <li><a href="post_new.php" class="py-0.5 px-2 block whitespace-no-wrap hover:text-blue-600">Add New Post</a></li>
                                 <li><a href="../category/categories.php" class="py-0.5 px-2 block whitespace-no-wrap hover:text-blue-600">Categories</a></li>
@@ -170,13 +170,13 @@
                     </div>
                     <div class="menu_dropdown">
                         <div class="dropdown inline-block relative">
-                            <button class="text-gray-200 text-base pb-1 font-normal  rounded inline-flex items-center">
+                            <button class="text-primary-gray text-base pb-1 font-normal  rounded inline-flex items-center">
                                 <span class="mr-1">Media</span>
                                 <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                                     <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path> 
                                 </svg>
                             </button>
-                            <ul class="dropdown-menu relative hidden text-gray-200 pt-0.5 z-30 w-full text-base font-normal">
+                            <ul class="dropdown-menu relative hidden text-primary-gray pt-0.5 z-30 w-full text-base font-normal">
                                 <li><a href="../media/media.php" class="py-0.5 px-2 block whitespace-no-wrap hover:text-blue-600">All Media</a></li>
                                 <li><a href="../media/media_upload.php" class="py-0.5 px-2 block whitespace-no-wrap hover:text-blue-600">Upload Media</a></li>
                             </ul>
@@ -184,13 +184,13 @@
                     </div>
                     <div class="menu_dropdown pb-2">
                         <div class="dropdown inline-block relative">
-                            <button class="text-gray-200 text-base pb-1 font-normal  rounded inline-flex items-center">
+                            <button class="text-primary-gray text-base pb-1 font-normal  rounded inline-flex items-center">
                                 <span class="mr-1">Users</span>
                                 <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                                     <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path> 
                                 </svg>
                             </button>
-                            <ul class="dropdown-menu relative hidden text-gray-200 pt-0.5 z-30 w-full text-base font-normal">
+                            <ul class="dropdown-menu relative hidden text-primary-gray pt-0.5 z-30 w-full text-base font-normal">
                                 <li><a href="../user/users.php" class="py-0.5 px-2 block whitespace-no-wrap hover:text-blue-600">All Users</a></li>
                                 <?php 
                                     echo ($_SESSION['userrole'] === 'administrator')
@@ -202,7 +202,7 @@
                     </div>
                 </div>
             </aside>
-            <div class="col-span-6 h-screen mb-10">
+            <div class="col-span-6 h-screen mb-10 pt-5">
                 <div class="py-12 px-6">
                     <div class="flex pb-3 items-center">
                         <h2 class="text-xl font-medium text-gray-900 pr-5">Posts</h2>
